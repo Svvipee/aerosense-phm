@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+*.pyo
+data/models/
+data/*.db
+data/*.json
+*.egg-info/
+.pytest_cache/
+.claude/
+node_modules/
+*.joblib
+ema_phm.db
