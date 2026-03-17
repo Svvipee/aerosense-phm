@@ -10,3 +10,6 @@ data/*.json
 node_modules/
 *.joblib
 ema_phm.db
+*.step
+*.stp
+*.stl
