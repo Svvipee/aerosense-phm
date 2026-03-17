@@ -1492,57 +1492,113 @@ footer strong { color: var(--text); }
       </div>
     </div>
 
-    <!-- ═══════ CAD: Integrated PHM Sensor Housing ═══════ -->
+    <!-- ═══════ CAD: SolidWorks Design Guide ═══════ -->
     <div style="margin-top:2.5rem" id="cad-model">
-      <h3>CAD Model — Integrated EMA Mid-Housing with PHM Sensor Provisions</h3>
+      <h3>3D Concept Model — SolidWorks Design Guide</h3>
       <p style="color:var(--subtle);font-size:.9rem;line-height:1.7;margin:.75rem 0 1.5rem">
-        A parametric 3D solid model of the structural mid-frame that sits between the BLDC motor
-        and ball-screw mechanism. This is the single highest-value mechanical component because it
-        unifies <strong>structural load path</strong>, <strong>bearing support</strong>,
-        <strong>sensor integration</strong>, <strong>thermal management</strong>, and
-        <strong>maintainability</strong> in one part. Built with CadQuery 2.7 and exported
-        as STEP for direct SolidWorks import.
+        This section provides a complete engineering blueprint for modelling the most mission-critical
+        mechanical component of the AeroSense PHM system in SolidWorks. The design target, dimensions,
+        features, and step-by-step modelling sequence are specified below so you can build a
+        realistic aerospace concept part from scratch.
       </p>
 
-      <!-- Component selection justification -->
+      <!-- Placeholder visual -->
+      <div class="cad-placeholder" style="margin-bottom:1.5rem">
+        <div class="cad-placeholder-icon">&#9881;</div>
+        <h3 style="color:var(--muted);font-weight:600;margin-bottom:.75rem">Integrated EMA Mid-Housing &mdash; SolidWorks Build Target</h3>
+        <p style="color:var(--muted);font-size:.88rem;max-width:600px;margin:0 auto;line-height:1.7">
+          The 3D model for this component should be built manually in SolidWorks following
+          the engineering specification and step-by-step modelling guide below.
+          The finished part can then be used for FEA simulation, engineering drawings (AS9100),
+          and startup pitch material.
+        </p>
+        <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:1.5rem">
+          <span class="tag tag-cyan">SolidWorks 2020+</span>
+          <span class="tag tag-blue">FEA-ready geometry</span>
+          <span class="tag tag-blue">Engineering drawing (AS9100)</span>
+          <span class="tag tag-warn">Build manually from spec below</span>
+        </div>
+      </div>
+
+      <!-- Component selection and purpose -->
       <div class="card" style="margin-bottom:1.5rem;border-left:3px solid var(--accent)">
-        <h3 style="color:var(--accent)">Why This Component?</h3>
+        <h3 style="color:var(--accent)">Component Selection: Integrated EMA Mid-Housing</h3>
         <p style="color:var(--subtle);font-size:.88rem;line-height:1.7;margin-top:.75rem">
-          The mid-housing was selected over simpler alternatives (motor mount bracket, sensor-only plate,
-          full housing) because it captures <strong>~80% of the design value in ~20% of the complexity</strong>.
-          It is the primary structural backbone of the EMA, the bearing seat (failure mode #1 per our PHM data),
-          the thermal interface for winding heat, and the mounting platform for all four PHM sensor types.
-          A motor mount bracket has no sensor value; a sensor-only bracket has no structural contribution.
+          The <strong>actuator mid-frame housing</strong> is the single most valuable component to model
+          for AeroSense PHM. It is the structural element that sits between the BLDC motor and the
+          ball-screw mechanism, and it serves five simultaneous engineering functions:
+        </p>
+        <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:.5rem;margin-top:1rem">
+          <div style="text-align:center;padding:.6rem .3rem;background:rgba(37,99,235,.06);border-radius:8px;border:1px solid rgba(37,99,235,.12)">
+            <div style="font-size:.75rem;font-weight:700;color:var(--accent)">Structural</div>
+            <div style="font-size:.68rem;color:var(--subtle);margin-top:.2rem">Primary load path</div>
+          </div>
+          <div style="text-align:center;padding:.6rem .3rem;background:rgba(239,68,68,.06);border-radius:8px;border:1px solid rgba(239,68,68,.12)">
+            <div style="font-size:.75rem;font-weight:700;color:var(--crit)">Bearing seat</div>
+            <div style="font-size:.68rem;color:var(--subtle);margin-top:.2rem">Failure mode #1</div>
+          </div>
+          <div style="text-align:center;padding:.6rem .3rem;background:rgba(6,182,212,.06);border-radius:8px;border:1px solid rgba(6,182,212,.12)">
+            <div style="font-size:.75rem;font-weight:700;color:var(--accent2)">Sensor mount</div>
+            <div style="font-size:.68rem;color:var(--subtle);margin-top:.2rem">4 PHM sensors</div>
+          </div>
+          <div style="text-align:center;padding:.6rem .3rem;background:rgba(245,158,11,.06);border-radius:8px;border:1px solid rgba(245,158,11,.12)">
+            <div style="font-size:.75rem;font-weight:700;color:var(--warn)">Thermal</div>
+            <div style="font-size:.68rem;color:var(--subtle);margin-top:.2rem">Cooling fins</div>
+          </div>
+          <div style="text-align:center;padding:.6rem .3rem;background:rgba(16,185,129,.06);border-radius:8px;border:1px solid rgba(16,185,129,.12)">
+            <div style="font-size:.75rem;font-weight:700;color:var(--accent3)">Maintenance</div>
+            <div style="font-size:.68rem;color:var(--subtle);margin-top:.2rem">Inspection port</div>
+          </div>
+        </div>
+        <p style="color:var(--muted);font-size:.82rem;line-height:1.6;margin-top:1rem">
+          A motor mount bracket has no sensor value. A sensor-only plate has no structural contribution.
+          A full housing is too complex for a startup concept. The mid-housing captures <strong>~80% of the
+          design value in ~20% of the complexity</strong> &mdash; the optimal target for AeroSense PHM.
         </p>
       </div>
 
-      <!-- 3D model cross-section diagram (ASCII) -->
-      <div class="card" style="margin-bottom:1.5rem;background:var(--bg2)">
-        <h3>Cross-Section Layout</h3>
-        <pre style="font-family:var(--mono);font-size:.72rem;color:var(--accent2);line-height:1.5;overflow-x:auto;margin-top:.75rem">
-    MOTOR SIDE (z=0)                                     AIRFRAME SIDE (z=72)
-    ┌─────────────────────────────────────────────────────────────────────────┐
-    │  Motor Flange      Cooling Fins         Structural        Airframe     │
-    │  (D110 x 8mm)      Zone (6 fins)        Ribs (6x)        Flange       │
-    │                                                           (D120 x 10mm)│
-    │   ┌──┐  ╔═══╗  ┌┐ ┌┐ ┌┐ ┌┐ ┌┐ ┌┐    ║        ║    ╔═══╗  ┌──┐      │
-    │   │  │  ║   ║  ││ ││ ││ ││ ││ ││    ║        ║    ║   ║  │  │      │
-    ├───┤  ├──╢   ╟──┤├─┤├─┤├─┤├─┤├─┤├────╢        ╟────╢   ╟──┤  ├──────┤
-    │▓▓▓│  │▓▓║BRG║▓▓│││││││││││││││││▓▓▓▓║BORE D40║▓▓▓▓║THR║▓▓│  │▓▓▓▓▓▓│
-    ├───┤  ├──╢   ╟──┤├─┤├─┤├─┤├─┤├─┤├────╢        ╟────╢   ╟──┤  ├──────┤
-    │   │  ║   ║  ││ ││ ││ ││ ││ ││    ║        ║    ║   ║  │  │      │
-    │   └──┘  ╚═══╝  └┘ └┘ └┘ └┘ └┘ └┘    ║        ║    ╚═══╝  └──┘      │
-    │                                                                         │
-    │  Spigot D73    BRG: D80x19      [ACCEL] [RTD] [PROX]    THR: D52x16   │
-    │  6x M5 bolts   NSK 6208ZZ       Sensor Bosses (4)      4x M6 bolts    │
-    └─────────────────────────────────────────────────────────────────────────┘
-        </pre>
-      </div>
-
-      <!-- Dimension summary table -->
+      <!-- Engineering specification -->
       <div class="grid-2" style="gap:1.5rem;align-items:start">
         <div class="card">
-          <h3>Key Dimensions</h3>
+          <h3>Engineering Assumptions</h3>
+          <table style="width:100%;font-size:.82rem;margin-top:.75rem;border-collapse:collapse">
+            <tr style="border-bottom:1px solid var(--border)">
+              <td style="padding:.4rem 0;color:var(--subtle)">Actuator class</td>
+              <td style="padding:.4rem 0;text-align:right;font-family:var(--mono);color:var(--text)">5 kN peak, aileron EMA</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border)">
+              <td style="padding:.4rem 0;color:var(--subtle)">Motor</td>
+              <td style="padding:.4rem 0;text-align:right;font-family:var(--mono);color:var(--text)">BLDC, 1.5 kW, 48 V, 3000 RPM</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border)">
+              <td style="padding:.4rem 0;color:var(--subtle)">Ball-screw</td>
+              <td style="padding:.4rem 0;text-align:right;font-family:var(--mono);color:var(--text)">&empty;16 mm, 5 mm lead, 92% eff.</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border)">
+              <td style="padding:.4rem 0;color:var(--subtle)">Main bearing</td>
+              <td style="padding:.4rem 0;text-align:right;font-family:var(--mono);color:var(--text)">NSK 6208ZZ (40&times;80&times;18)</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border)">
+              <td style="padding:.4rem 0;color:var(--subtle)">Thrust bearing</td>
+              <td style="padding:.4rem 0;text-align:right;font-family:var(--mono);color:var(--text)">Angular contact, 25&times;52&times;15</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border)">
+              <td style="padding:.4rem 0;color:var(--subtle)">Operating temp</td>
+              <td style="padding:.4rem 0;text-align:right;font-family:var(--mono);color:var(--text)">&minus;55 &deg;C to +125 &deg;C</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border)">
+              <td style="padding:.4rem 0;color:var(--subtle)">Safety factors</td>
+              <td style="padding:.4rem 0;text-align:right;font-family:var(--mono);color:var(--text)">1.5 ult. / 1.15 yield (FAR 25)</td>
+            </tr>
+            <tr>
+              <td style="padding:.4rem 0;color:var(--subtle)">Material</td>
+              <td style="padding:.4rem 0;text-align:right;font-family:var(--mono);color:var(--text)">7075-T6 Al (503 MPa yield)</td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="card">
+          <h3>Target Dimensions</h3>
           <table style="width:100%;font-size:.82rem;margin-top:.75rem;border-collapse:collapse">
             <tr style="border-bottom:1px solid var(--border)">
               <td style="padding:.4rem 0;color:var(--subtle)">Overall envelope</td>
@@ -1554,7 +1610,7 @@ footer strong { color: var(--text); }
             </tr>
             <tr style="border-bottom:1px solid var(--border)">
               <td style="padding:.4rem 0;color:var(--subtle)">Shaft through-bore</td>
-              <td style="padding:.4rem 0;text-align:right;font-family:var(--mono);color:var(--text)">&empty;40 mm (H7)</td>
+              <td style="padding:.4rem 0;text-align:right;font-family:var(--mono);color:var(--text)">&empty;40 mm</td>
             </tr>
             <tr style="border-bottom:1px solid var(--border)">
               <td style="padding:.4rem 0;color:var(--subtle)">Min wall thickness</td>
@@ -1562,306 +1618,350 @@ footer strong { color: var(--text); }
             </tr>
             <tr style="border-bottom:1px solid var(--border)">
               <td style="padding:.4rem 0;color:var(--subtle)">Motor flange</td>
-              <td style="padding:.4rem 0;text-align:right;font-family:var(--mono);color:var(--text)">&empty;110 &times; 8 mm, 6&times; M5</td>
+              <td style="padding:.4rem 0;text-align:right;font-family:var(--mono);color:var(--text)">&empty;110 &times; 8 mm thick</td>
             </tr>
             <tr style="border-bottom:1px solid var(--border)">
               <td style="padding:.4rem 0;color:var(--subtle)">Airframe flange</td>
-              <td style="padding:.4rem 0;text-align:right;font-family:var(--mono);color:var(--text)">&empty;120 &times; 10 mm, 4&times; M6</td>
+              <td style="padding:.4rem 0;text-align:right;font-family:var(--mono);color:var(--text)">&empty;120 &times; 10 mm thick</td>
             </tr>
             <tr style="border-bottom:1px solid var(--border)">
               <td style="padding:.4rem 0;color:var(--subtle)">Main bearing pocket</td>
-              <td style="padding:.4rem 0;text-align:right;font-family:var(--mono);color:var(--text)">&empty;80 &times; 19 deep (6208ZZ)</td>
-            </tr>
-            <tr style="border-bottom:1px solid var(--border)">
-              <td style="padding:.4rem 0;color:var(--subtle)">Thrust bearing pocket</td>
-              <td style="padding:.4rem 0;text-align:right;font-family:var(--mono);color:var(--text)">&empty;52 &times; 16 deep</td>
-            </tr>
-            <tr style="border-bottom:1px solid var(--border)">
-              <td style="padding:.4rem 0;color:var(--subtle)">Structural ribs</td>
-              <td style="padding:.4rem 0;text-align:right;font-family:var(--mono);color:var(--text)">6&times; longitudinal, 3&times;8 mm</td>
+              <td style="padding:.4rem 0;text-align:right;font-family:var(--mono);color:var(--text)">&empty;80 &times; 19 mm deep</td>
             </tr>
             <tr>
-              <td style="padding:.4rem 0;color:var(--subtle)">Cooling fins</td>
-              <td style="padding:.4rem 0;text-align:right;font-family:var(--mono);color:var(--text)">6&times; annular, 5 mm height</td>
+              <td style="padding:.4rem 0;color:var(--subtle)">Thrust bearing pocket</td>
+              <td style="padding:.4rem 0;text-align:right;font-family:var(--mono);color:var(--text)">&empty;52 &times; 16 mm deep</td>
             </tr>
           </table>
         </div>
+      </div>
 
-        <div class="card">
-          <h3>PHM Sensor Provisions</h3>
-          <div style="margin-top:.75rem">
-            <div style="padding:.6rem 0;border-bottom:1px solid var(--border)">
-              <div style="display:flex;justify-content:space-between;align-items:center">
-                <strong style="font-size:.88rem">Tri-Axis Accelerometer</strong>
-                <span class="tag tag-green" style="font-size:.65rem">0&deg; position</span>
-              </div>
-              <p style="font-size:.78rem;color:var(--subtle);margin-top:.3rem">
-                &empty;16 mm boss with 10-32 UNF stud mount (PCB 356A02 compatible).
-                Positioned over main bearing zone for direct vibration pickup of BPFI/BPFO/BSF fault frequencies.
-              </p>
-            </div>
-            <div style="padding:.6rem 0;border-bottom:1px solid var(--border)">
-              <div style="display:flex;justify-content:space-between;align-items:center">
-                <strong style="font-size:.88rem">RTD / Thermocouple Probe</strong>
-                <span class="tag tag-warn" style="font-size:.65rem">90&deg; position</span>
-              </div>
-              <p style="font-size:.78rem;color:var(--subtle);margin-top:.3rem">
-                &empty;6 mm bore, 15 mm deep — penetrates close to bearing outer race.
-                Measures winding &amp; bearing temperature for Montsinger rule degradation tracking.
-              </p>
-            </div>
-            <div style="padding:.6rem 0;border-bottom:1px solid var(--border)">
-              <div style="display:flex;justify-content:space-between;align-items:center">
-                <strong style="font-size:.88rem">Inductive Proximity Sensor</strong>
-                <span class="tag tag-cyan" style="font-size:.65rem">180&deg; position</span>
-              </div>
-              <p style="font-size:.78rem;color:var(--subtle);margin-top:.3rem">
-                M8&times;1.0 threaded port aimed at ball-screw nut.
-                Measures axial play / backlash growth — the feature that drives 59.1% of RUL prediction.
-              </p>
-            </div>
-            <div style="padding:.6rem 0">
-              <div style="display:flex;justify-content:space-between;align-items:center">
-                <strong style="font-size:.88rem">Current Sense Connector</strong>
-                <span class="tag tag-blue" style="font-size:.65rem">270&deg; position</span>
-              </div>
-              <p style="font-size:.78rem;color:var(--subtle);margin-top:.3rem">
-                18&times;12 mm boss with 2&times; M3 mounting holes for connector header.
-                Motor phase current monitoring for winding resistance degradation detection.
-              </p>
-            </div>
+      <!-- Features to include -->
+      <div class="card" style="margin-top:1.5rem">
+        <h3>Physical Features to Model</h3>
+        <p style="color:var(--subtle);font-size:.85rem;line-height:1.7;margin-top:.75rem">
+          The part should include all of the following features, each serving a specific mechanical
+          or PHM function within the actuator system:
+        </p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem">
+          <div style="padding:.75rem;background:var(--bg2);border-radius:8px;border:1px solid var(--border)">
+            <strong style="font-size:.88rem;color:var(--accent)">Mounting Flanges (2)</strong>
+            <p style="font-size:.78rem;color:var(--subtle);margin-top:.3rem;line-height:1.5">
+              <strong>Motor-side:</strong> &empty;110 mm, 8 mm thick, 6&times; M5 clearance holes on &empty;96 PCD,
+              plus a &empty;73 mm spigot register recess (3 mm deep) for precise motor centering.<br>
+              <strong>Airframe-side:</strong> &empty;120 mm, 10 mm thick (thicker &mdash; primary load path),
+              4&times; M6 counterbored holes on &empty;105 PCD. Counterbores: &empty;11 &times; 6.5 mm deep.
+            </p>
+          </div>
+          <div style="padding:.75rem;background:var(--bg2);border-radius:8px;border:1px solid var(--border)">
+            <strong style="font-size:.88rem;color:var(--crit)">Bearing Pockets (2)</strong>
+            <p style="font-size:.78rem;color:var(--subtle);margin-top:.3rem;line-height:1.5">
+              <strong>Main bearing (motor side):</strong> &empty;80 &times; 19 mm deep pocket from motor face.
+              1.5 mm retention shoulder lip. H7 tolerance on bore for press-fit.<br>
+              <strong>Thrust bearing (output side):</strong> &empty;52 &times; 16 mm deep pocket from airframe face.
+              Accepts angular-contact bearing for axial ball-screw thrust.
+            </p>
+          </div>
+          <div style="padding:.75rem;background:var(--bg2);border-radius:8px;border:1px solid var(--border)">
+            <strong style="font-size:.88rem;color:var(--accent2)">PHM Sensor Bosses (4)</strong>
+            <p style="font-size:.78rem;color:var(--subtle);margin-top:.3rem;line-height:1.5">
+              <strong>Accelerometer (0&deg;):</strong> &empty;16 mm boss, 4 mm protrusion, 10-32 UNF stud hole 10 mm deep. Over bearing zone.<br>
+              <strong>RTD probe (90&deg;):</strong> &empty;12 mm boss, &empty;6 mm bore 15 mm deep toward bearing race.<br>
+              <strong>Proximity sensor (180&deg;):</strong> &empty;14 mm boss, M8&times;1.0 threaded port 12 mm deep. Aimed at ball-screw nut.<br>
+              <strong>Current connector (270&deg;):</strong> 18&times;12 mm rectangular boss, 2&times; M3 holes spaced 12 mm.
+            </p>
+          </div>
+          <div style="padding:.75rem;background:var(--bg2);border-radius:8px;border:1px solid var(--border)">
+            <strong style="font-size:.88rem;color:var(--accent3)">Structural &amp; Thermal Features</strong>
+            <p style="font-size:.78rem;color:var(--subtle);margin-top:.3rem;line-height:1.5">
+              <strong>6 longitudinal ribs:</strong> 3 mm thick, 8 mm radial height, equally spaced around housing body between flanges. Fillet at base (2 mm R).<br>
+              <strong>6 annular cooling fins:</strong> 1.5 mm thick, 5 mm radial height, spaced 4 mm apart in the motor-adjacent zone (starting 12 mm from motor face).<br>
+              <strong>Inspection port:</strong> 22&times;18 mm rectangular cutout at 135&deg;, with 2&times; M2.5 cover screw holes.<br>
+              <strong>Cable channel:</strong> 10&times;4 mm groove at 315&deg;, running axially between flanges.
+            </p>
           </div>
         </div>
       </div>
 
-      <!-- Engineering details row -->
-      <div class="grid-3" style="margin-top:1.5rem">
-        <div class="card">
-          <h3 style="color:var(--accent2)">Material</h3>
-          <div style="margin-top:.75rem;font-size:.85rem;color:var(--subtle);line-height:1.7">
-            <div style="font-size:1.1rem;font-weight:700;color:var(--text);margin-bottom:.5rem">7075-T6 Aluminium</div>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:.3rem .75rem;font-size:.82rem">
-              <span>Yield:</span><span style="font-family:var(--mono);color:var(--text)">503 MPa</span>
-              <span>Ultimate:</span><span style="font-family:var(--mono);color:var(--text)">572 MPa</span>
-              <span>Density:</span><span style="font-family:var(--mono);color:var(--text)">2810 kg/m&sup3;</span>
-              <span>Modulus:</span><span style="font-family:var(--mono);color:var(--text)">71.7 GPa</span>
-              <span>Fatigue (10&sup7;):</span><span style="font-family:var(--mono);color:var(--text)">~160 MPa</span>
+      <!-- SolidWorks step-by-step modelling guide -->
+      <div class="card" style="margin-top:1.5rem;border-left:3px solid var(--accent2)">
+        <h3 style="color:var(--accent2)">Step-by-Step SolidWorks Modelling Guide</h3>
+        <p style="color:var(--subtle);font-size:.85rem;line-height:1.7;margin-top:.75rem">
+          Follow this sequence to build the mid-housing as a single solid part. Each step builds on the previous one.
+          Use the <strong>Front Plane</strong> as your primary sketch plane (XY), with the Z-axis running along the housing bore axis.
+        </p>
+
+        <div style="margin-top:1.25rem">
+          <!-- Step 1 -->
+          <div style="padding:.75rem 0;border-bottom:1px solid var(--border)">
+            <div style="display:flex;align-items:center;gap:.75rem">
+              <span style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--accent);color:white;font-size:.75rem;font-weight:700;flex-shrink:0">1</span>
+              <strong style="font-size:.9rem;color:var(--text)">Base Revolved Profile</strong>
             </div>
-            <p style="font-size:.78rem;margin-top:.5rem;color:var(--muted)">
-              MIL-A-8625 Type III hard anodize on bearing pockets. Helicoil inserts
-              on all tapped holes per NAS1149.
+            <p style="font-size:.82rem;color:var(--subtle);margin-top:.5rem;line-height:1.6;padding-left:40px">
+              Open a new Part. On the <strong>Right Plane</strong>, sketch the half cross-section profile of the housing.
+              Draw a vertical centreline along the bore axis. Sketch the profile as a stepped outline:
+              the motor flange region (&empty;110, 8 mm long), the main cylindrical body (&empty;95, ~54 mm long),
+              and the airframe flange region (&empty;120, 10 mm long). Include the &empty;40 mm through-bore as the
+              inner boundary. Use <strong>Revolved Boss/Base</strong> (360&deg;) around the centreline to create
+              the solid housing body with both flanges and the bore in a single feature.
             </p>
           </div>
-        </div>
 
-        <div class="card">
-          <h3 style="color:var(--accent3)">Design Objectives</h3>
-          <div style="margin-top:.75rem">
-            <div style="display:flex;flex-wrap:wrap;gap:.5rem">
-              <span class="tag tag-green" style="font-size:.7rem">Low weight</span>
-              <span class="tag tag-blue" style="font-size:.7rem">High stiffness</span>
-              <span class="tag tag-cyan" style="font-size:.7rem">Sensor integration</span>
-              <span class="tag tag-warn" style="font-size:.7rem">Thermal mgmt</span>
-              <span class="tag tag-green" style="font-size:.7rem">Maintainability</span>
-              <span class="tag tag-blue" style="font-size:.7rem">Vibration reduction</span>
+          <!-- Step 2 -->
+          <div style="padding:.75rem 0;border-bottom:1px solid var(--border)">
+            <div style="display:flex;align-items:center;gap:.75rem">
+              <span style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--accent);color:white;font-size:.75rem;font-weight:700;flex-shrink:0">2</span>
+              <strong style="font-size:.9rem;color:var(--text)">Main Bearing Pocket (Motor Side)</strong>
             </div>
-            <p style="font-size:.82rem;color:var(--subtle);line-height:1.6;margin-top:.75rem">
-              Safety factors: 1.5 ultimate / 1.15 yield per FAR 25.303.
-              Operating range: &minus;55 &deg;C to +125 &deg;C (MIL-STD-810H).
-              5 kN peak axial thrust from ball-screw.
+            <p style="font-size:.82rem;color:var(--subtle);margin-top:.5rem;line-height:1.6;padding-left:40px">
+              On the motor-side face (z = 0), create a new sketch. Draw two concentric circles: &empty;80 mm
+              (bearing OD) and &empty;40 mm (shaft bore). Use <strong>Extruded Cut</strong>, 19 mm deep into the housing.
+              This creates the pocket that accepts the NSK 6208ZZ outer race. The remaining material at
+              the 19 mm depth forms a 1.5 mm shoulder lip that retains the bearing axially. Verify the
+              pocket wall thickness: (95 &minus; 80) / 2 = 7.5 mm &mdash; adequate for press-fit loads.
             </p>
           </div>
-        </div>
 
-        <div class="card">
-          <h3 style="color:var(--warn)">Tolerances (GD&amp;T)</h3>
-          <div style="margin-top:.75rem;font-size:.82rem;color:var(--subtle);line-height:1.8">
-            <div><code style="font-size:.78rem;color:var(--text)">&empty;80 H7</code> &mdash; Bearing pocket bore</div>
-            <div><code style="font-size:.78rem;color:var(--text)">&empty;40 H7</code> &mdash; Shaft bore</div>
-            <div><code style="font-size:.78rem;color:var(--text)">&empty;73 h6</code> &mdash; Motor spigot register</div>
-            <div><code style="font-size:.78rem;color:var(--text)">&pm;0.10 TP</code> &mdash; Bolt true position</div>
-            <div><code style="font-size:.78rem;color:var(--text)">0.05 FL</code> &mdash; Flange flatness</div>
-            <div><code style="font-size:.78rem;color:var(--text)">&perp; 0.03</code> &mdash; Sensor boss to bore</div>
+          <!-- Step 3 -->
+          <div style="padding:.75rem 0;border-bottom:1px solid var(--border)">
+            <div style="display:flex;align-items:center;gap:.75rem">
+              <span style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--accent);color:white;font-size:.75rem;font-weight:700;flex-shrink:0">3</span>
+              <strong style="font-size:.9rem;color:var(--text)">Motor Spigot Register</strong>
+            </div>
+            <p style="font-size:.82rem;color:var(--subtle);margin-top:.5rem;line-height:1.6;padding-left:40px">
+              On the same motor-side face, sketch a thin annular ring: outer &empty;73 mm, inner &empty;70 mm
+              (1.5 mm radial width). Use <strong>Extruded Cut</strong>, 3 mm deep. This creates the spigot
+              register &mdash; a precision recess that centres the motor housing concentrically with the
+              bearing bore. Use h6 tolerance callout (&empty;73 +0.000/&minus;0.030) on the drawing.
+            </p>
+          </div>
+
+          <!-- Step 4 -->
+          <div style="padding:.75rem 0;border-bottom:1px solid var(--border)">
+            <div style="display:flex;align-items:center;gap:.75rem">
+              <span style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--accent);color:white;font-size:.75rem;font-weight:700;flex-shrink:0">4</span>
+              <strong style="font-size:.9rem;color:var(--text)">Motor Bolt Holes (Circular Pattern)</strong>
+            </div>
+            <p style="font-size:.82rem;color:var(--subtle);margin-top:.5rem;line-height:1.6;padding-left:40px">
+              On the motor-side face, sketch a single &empty;5.5 mm circle (M5 clearance) at a radial distance
+              of 48 mm from centre (on the &empty;96 PCD). Use <strong>Extruded Cut</strong> through the 8 mm flange.
+              Then apply <strong>Circular Pattern</strong>: 6 instances, 360&deg;, axis = bore centreline.
+              This creates a symmetric bolt pattern that mates to the BLDC motor housing.
+            </p>
+          </div>
+
+          <!-- Step 5 -->
+          <div style="padding:.75rem 0;border-bottom:1px solid var(--border)">
+            <div style="display:flex;align-items:center;gap:.75rem">
+              <span style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--accent);color:white;font-size:.75rem;font-weight:700;flex-shrink:0">5</span>
+              <strong style="font-size:.9rem;color:var(--text)">Thrust Bearing Pocket (Airframe Side)</strong>
+            </div>
+            <p style="font-size:.82rem;color:var(--subtle);margin-top:.5rem;line-height:1.6;padding-left:40px">
+              On the airframe-side face (z = 72), sketch two concentric circles: &empty;52 mm (thrust bearing OD)
+              and &empty;25 mm (thrust bearing bore). Use <strong>Extruded Cut</strong>, 16 mm deep. This pocket
+              accepts the angular-contact thrust bearing that reacts the 5 kN axial force from the ball-screw.
+            </p>
+          </div>
+
+          <!-- Step 6 -->
+          <div style="padding:.75rem 0;border-bottom:1px solid var(--border)">
+            <div style="display:flex;align-items:center;gap:.75rem">
+              <span style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--accent);color:white;font-size:.75rem;font-weight:700;flex-shrink:0">6</span>
+              <strong style="font-size:.9rem;color:var(--text)">Airframe Bolt Holes with Counterbores</strong>
+            </div>
+            <p style="font-size:.82rem;color:var(--subtle);margin-top:.5rem;line-height:1.6;padding-left:40px">
+              On the airframe-side face, sketch a single &empty;6.6 mm circle (M6 clearance) at 52.5 mm
+              from centre (&empty;105 PCD), offset 45&deg; from the motor bolt pattern to avoid interference.
+              Use the <strong>Hole Wizard</strong>: M6, counterbore &empty;11 &times; 6.5 mm deep, through the 10 mm flange.
+              Apply <strong>Circular Pattern</strong>: 4 instances, 360&deg;.
+            </p>
+          </div>
+
+          <!-- Step 7 -->
+          <div style="padding:.75rem 0;border-bottom:1px solid var(--border)">
+            <div style="display:flex;align-items:center;gap:.75rem">
+              <span style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--accent);color:white;font-size:.75rem;font-weight:700;flex-shrink:0">7</span>
+              <strong style="font-size:.9rem;color:var(--text)">Longitudinal Stiffening Ribs</strong>
+            </div>
+            <p style="font-size:.82rem;color:var(--subtle);margin-top:.5rem;line-height:1.6;padding-left:40px">
+              On a plane perpendicular to the bore axis (mid-length), sketch a single rib profile:
+              a thin rectangle 3 mm wide &times; 8 mm tall, positioned radially outward from the &empty;95 housing OD.
+              Use <strong>Extruded Boss</strong> in both directions to span from the motor flange to the airframe flange
+              (the full ~54 mm body length between flanges). Apply <strong>Circular Pattern</strong>: 6 instances.
+              Then add <strong>Fillet</strong> (2 mm radius) at each rib-to-housing junction to reduce stress concentration.
+              These ribs increase bending stiffness by ~35% compared to simply making the wall 3 mm thicker,
+              at a fraction of the weight.
+            </p>
+          </div>
+
+          <!-- Step 8 -->
+          <div style="padding:.75rem 0;border-bottom:1px solid var(--border)">
+            <div style="display:flex;align-items:center;gap:.75rem">
+              <span style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--accent);color:white;font-size:.75rem;font-weight:700;flex-shrink:0">8</span>
+              <strong style="font-size:.9rem;color:var(--text)">Annular Cooling Fins</strong>
+            </div>
+            <p style="font-size:.82rem;color:var(--subtle);margin-top:.5rem;line-height:1.6;padding-left:40px">
+              Create a reference plane 12 mm from the motor flange face. Sketch an annular ring: outer &empty;105 mm
+              (housing OD + 5 mm fin height), inner &empty;95 mm. Use <strong>Extruded Boss</strong>, 1.5 mm thick.
+              Apply <strong>Linear Pattern</strong> along the bore axis: 6 instances, 5.5 mm spacing (1.5 mm fin + 4 mm gap).
+              These fins increase the surface area by ~40% in the motor-adjacent heat zone, reducing winding
+              temperature and extending insulation life per the Montsinger rule.
+            </p>
+          </div>
+
+          <!-- Step 9 -->
+          <div style="padding:.75rem 0;border-bottom:1px solid var(--border)">
+            <div style="display:flex;align-items:center;gap:.75rem">
+              <span style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--accent);color:white;font-size:.75rem;font-weight:700;flex-shrink:0">9</span>
+              <strong style="font-size:.9rem;color:var(--text)">Sensor Mounting Bosses</strong>
+            </div>
+            <p style="font-size:.82rem;color:var(--subtle);margin-top:.5rem;line-height:1.6;padding-left:40px">
+              For each of the 4 sensor positions, create a reference plane at the appropriate angular position
+              (0&deg;, 90&deg;, 180&deg;, 270&deg;) by rotating around the bore axis. On each plane:<br><br>
+              <strong>Accelerometer (0&deg;, z=22mm):</strong> Sketch a &empty;16 mm circle on the housing OD surface.
+              Use <strong>Extruded Boss</strong>, 4 mm outward. Drill a &empty;4.3 mm hole (10-32 UNF tap drill), 10 mm deep
+              using Hole Wizard. Flat-top the boss face for flush sensor contact.<br><br>
+              <strong>RTD probe (90&deg;, z=18mm):</strong> &empty;12 mm boss, 5 mm outward. Drill &empty;6 mm bore, 15 mm deep
+              (penetrates into the housing wall toward the bearing outer race).<br><br>
+              <strong>Proximity (180&deg;, z=55mm):</strong> &empty;14 mm boss, 4 mm outward. Use Hole Wizard for M8&times;1.0
+              tapped hole, 12 mm deep.<br><br>
+              <strong>Connector (270&deg;, z=30mm):</strong> Sketch an 18&times;12 mm rectangle. Extrude 5 mm outward.
+              Drill 2&times; &empty;3.2 mm (M3 clearance) holes spaced 12 mm apart.
+            </p>
+          </div>
+
+          <!-- Step 10 -->
+          <div style="padding:.75rem 0;border-bottom:1px solid var(--border)">
+            <div style="display:flex;align-items:center;gap:.75rem">
+              <span style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--accent);color:white;font-size:.75rem;font-weight:700;flex-shrink:0">10</span>
+              <strong style="font-size:.9rem;color:var(--text)">Inspection Port &amp; Cover Holes</strong>
+            </div>
+            <p style="font-size:.82rem;color:var(--subtle);margin-top:.5rem;line-height:1.6;padding-left:40px">
+              At the 135&deg; angular position, z = 20 mm from motor face, create a reference plane tangent
+              to the housing OD. Sketch a 22&times;18 mm rectangle centred on this position.
+              Use <strong>Extruded Cut</strong> through the full wall thickness plus 2 mm clearance.
+              This window allows visual bearing inspection without full actuator disassembly &mdash;
+              critical for on-wing MRO. Add 2&times; &empty;2.8 mm holes (M2.5 tap) flanking the port
+              at &plusmn;13 mm from centre for the removable cover plate screws.
+            </p>
+          </div>
+
+          <!-- Step 11 -->
+          <div style="padding:.75rem 0;border-bottom:1px solid var(--border)">
+            <div style="display:flex;align-items:center;gap:.75rem">
+              <span style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--accent);color:white;font-size:.75rem;font-weight:700;flex-shrink:0">11</span>
+              <strong style="font-size:.9rem;color:var(--text)">Cable Routing Channel</strong>
+            </div>
+            <p style="font-size:.82rem;color:var(--subtle);margin-top:.5rem;line-height:1.6;padding-left:40px">
+              At the 315&deg; position, create a reference plane tangent to the housing OD. Sketch a
+              10 mm wide rectangle running the full axial length between the two flanges.
+              Use <strong>Extruded Cut</strong>, 4 mm deep into the housing surface. This shallow channel
+              routes sensor cables from the four bosses to the connector header, prevents cable chafing
+              against the housing, and simplifies wire harness replacement during maintenance.
+            </p>
+          </div>
+
+          <!-- Step 12 -->
+          <div style="padding:.75rem 0">
+            <div style="display:flex;align-items:center;gap:.75rem">
+              <span style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--accent);color:white;font-size:.75rem;font-weight:700;flex-shrink:0">12</span>
+              <strong style="font-size:.9rem;color:var(--text)">Final Fillets, Chamfers &amp; Material Assignment</strong>
+            </div>
+            <p style="font-size:.82rem;color:var(--subtle);margin-top:.5rem;line-height:1.6;padding-left:40px">
+              Apply <strong>Fillet</strong> (1.5 mm radius) to all flange-to-body transitions &mdash; these junctions
+              are the highest stress concentration zones under axial thrust loading.
+              Apply <strong>Chamfer</strong> (0.8 &times; 45&deg;) to all sharp external edges and bearing pocket entries
+              for deburring and assembly ease. In the material library, assign
+              <strong>7075-T6 Aluminium</strong> (yield: 503 MPa, density: 2810 kg/m&sup3;, E: 71.7 GPa).
+              Use <strong>Mass Properties</strong> to verify the part mass is in the 350&ndash;500 g range.
+              Finally, set the appearance to anodized aluminium for realistic rendering.
+            </p>
           </div>
         </div>
       </div>
 
-      <!-- Maintenance and thermal features -->
+      <!-- Design considerations -->
       <div class="grid-2" style="margin-top:1.5rem;gap:1.5rem">
         <div class="card">
-          <h3>Maintainability Features</h3>
+          <h3>Design Considerations</h3>
           <div style="margin-top:.75rem;font-size:.85rem;color:var(--subtle);line-height:1.7">
-            <p><strong style="color:var(--text)">Inspection Port</strong> &mdash;
-              22&times;18 mm access window at 135&deg; with removable cover (2&times; M2.5 screws).
-              Allows visual bearing inspection without full actuator teardown &mdash;
-              critical for on-wing MRO operations.
+            <p><strong style="color:var(--text)">Stiffness vs Weight:</strong>
+              Use ribs rather than thicker walls. 6 ribs at 3&times;8 mm give ~35% higher bending stiffness
+              than adding 3 mm wall thickness, at lower weight. This is standard aerospace practice.
             </p>
-            <p style="margin-top:.5rem"><strong style="color:var(--text)">Cable Routing Channel</strong> &mdash;
-              10&times;4 mm channel at 315&deg; for organised sensor wiring. Prevents cable chafing
-              and simplifies connector replacement during line maintenance.
+            <p style="margin-top:.5rem"><strong style="color:var(--text)">Symmetry &amp; References:</strong>
+              Use the bore centreline as the primary reference axis for all circular patterns and
+              angular sensor positions. This ensures concentricity and simplifies GD&amp;T callouts.
             </p>
-            <p style="margin-top:.5rem"><strong style="color:var(--text)">Modular Sensor Bosses</strong> &mdash;
-              All four sensor mounts use standard thread patterns (10-32, M8, M3). Failed sensors
-              can be replaced in &lt;5 minutes without disturbing the structural fasteners.
+            <p style="margin-top:.5rem"><strong style="color:var(--text)">Manufacturability:</strong>
+              All features are achievable with 3-axis CNC milling + turning. The revolved base profile,
+              axial pockets, and radial holes are standard machining operations. No 5-axis required
+              unless adding sculptured weight-reduction pockets in a later revision.
             </p>
           </div>
         </div>
 
         <div class="card">
-          <h3>Thermal Management</h3>
+          <h3>How It Supports PHM</h3>
           <div style="margin-top:.75rem;font-size:.85rem;color:var(--subtle);line-height:1.7">
-            <p><strong style="color:var(--text)">6 Annular Cooling Fins</strong> &mdash;
-              5 mm radial height fins in the motor-adjacent zone increase surface area
-              by approximately 40%. Conducts BLDC waste heat to ambient air, reducing winding temperature.
+            <p><strong style="color:var(--text)">Vibration Sensing:</strong>
+              The accelerometer boss is positioned directly over the main bearing zone for maximum
+              sensitivity to BPFI (222 Hz), BPFO (177 Hz), and BSF fault frequencies.
             </p>
-            <p style="margin-top:.5rem"><strong style="color:var(--text)">Montsinger Rule Impact</strong> &mdash;
-              Every 10 &deg;C reduction in winding temperature doubles insulation life.
-              A 15 &deg;C reduction from fin-assisted cooling extends winding RUL by approximately 2.8&times;.
+            <p style="margin-top:.5rem"><strong style="color:var(--text)">Thermal Monitoring:</strong>
+              The RTD bore penetrates 15 mm into the housing wall, placing the probe tip within
+              ~3 mm of the bearing outer race &mdash; direct thermal measurement for Montsinger-rule
+              degradation tracking.
             </p>
-            <p style="margin-top:.5rem"><strong style="color:var(--text)">7075-T6 Thermal Conductivity</strong> &mdash;
-              130 W/m&middot;K &mdash; 5&times; higher than steel housings, providing excellent heat spreading
-              from motor interface to fin surfaces.
+            <p style="margin-top:.5rem"><strong style="color:var(--text)">Backlash Measurement:</strong>
+              The proximity sensor port at 180&deg; is aimed at the ball-screw nut, enabling continuous
+              measurement of axial play &mdash; the feature that drives 59.1% of RUL prediction accuracy.
             </p>
           </div>
-        </div>
-      </div>
-
-      <!-- CAD export info -->
-      <div class="card" style="margin-top:1.5rem;border-left:3px solid var(--accent3)">
-        <h3 style="color:var(--accent3)">CAD Model &amp; Export</h3>
-        <div style="margin-top:.75rem;font-size:.85rem;color:var(--subtle);line-height:1.7">
-          <p>
-            The model is generated by <code>cad/ema_mid_housing.py</code> using <strong>CadQuery 2.7</strong>
-            with the OpenCascade Technology (OCCT) kernel. All 60+ dimensions are parametric variables &mdash;
-            change any value to automatically resize the entire part.
-          </p>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-top:1rem">
-            <div style="background:rgba(16,185,129,.06);border-radius:8px;padding:.75rem;border:1px solid rgba(16,185,129,.15)">
-              <div style="font-weight:700;color:var(--accent3);font-size:.9rem">STEP Export (1.28 MB)</div>
-              <div style="font-size:.78rem;color:var(--subtle);margin-top:.3rem">
-                SolidWorks: File &gt; Open &gt; STEP (*.step)<br>
-                Imports as native solid body for FEA, drawing, or modification.
-              </div>
-            </div>
-            <div style="background:rgba(6,182,212,.06);border-radius:8px;padding:.75rem;border:1px solid rgba(6,182,212,.15)">
-              <div style="font-weight:700;color:var(--accent2);font-size:.9rem">STL Export (971 KB)</div>
-              <div style="font-size:.78rem;color:var(--subtle);margin-top:.3rem">
-                Quick 3D preview in any mesh viewer.<br>
-                3D printable for physical prototype review.
-              </div>
-            </div>
-          </div>
-        </div>
-        <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:1.25rem">
-          <span class="tag tag-green">STEP exported</span>
-          <span class="tag tag-green">STL exported</span>
-          <span class="tag tag-cyan">60+ parametric dimensions</span>
-          <span class="tag tag-blue">CadQuery 2.7 / OCCT kernel</span>
-          <span class="tag tag-blue">SolidWorks compatible</span>
         </div>
       </div>
 
       <!-- Recommended simulations -->
       <div class="card" style="margin-top:1.5rem;border-left:3px solid var(--warn)">
-        <h3 style="color:var(--warn)">Recommended Next-Step Simulations</h3>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem">
-          <div style="padding:.75rem;background:rgba(245,158,11,.05);border-radius:8px;border:1px solid rgba(245,158,11,.12)">
-            <strong style="font-size:.88rem;color:var(--text)">1. Static Stress (FEA)</strong>
-            <p style="font-size:.78rem;color:var(--subtle);margin-top:.3rem;line-height:1.5">
-              Apply 5 kN axial thrust + 2 kN radial bearing load.
-              Verify von Mises &lt; 335 MPa (yield/1.5).
-              Critical zone: bearing pocket shoulder.
+        <h3 style="color:var(--warn)">After Modelling: Recommended Simulations</h3>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:.75rem;margin-top:1rem">
+          <div style="padding:.6rem;background:rgba(245,158,11,.05);border-radius:8px;border:1px solid rgba(245,158,11,.12)">
+            <strong style="font-size:.82rem;color:var(--text)">Static Stress (FEA)</strong>
+            <p style="font-size:.72rem;color:var(--subtle);margin-top:.25rem;line-height:1.4">
+              5 kN axial + 2 kN radial. Target: von Mises &lt; 335 MPa (yield/1.5).
             </p>
           </div>
-          <div style="padding:.75rem;background:rgba(245,158,11,.05);border-radius:8px;border:1px solid rgba(245,158,11,.12)">
-            <strong style="font-size:.88rem;color:var(--text)">2. Modal / Vibration Analysis</strong>
-            <p style="font-size:.78rem;color:var(--subtle);margin-top:.3rem;line-height:1.5">
-              Verify first natural frequency &gt; 800 Hz
-              (well above 3000 RPM = 50 Hz shaft speed).
-              Ensure no resonance with BPFI (222 Hz) or BPFO (177 Hz).
+          <div style="padding:.6rem;background:rgba(245,158,11,.05);border-radius:8px;border:1px solid rgba(245,158,11,.12)">
+            <strong style="font-size:.82rem;color:var(--text)">Modal / Vibration</strong>
+            <p style="font-size:.72rem;color:var(--subtle);margin-top:.25rem;line-height:1.4">
+              First natural freq. &gt; 800 Hz. No resonance with BPFI/BPFO.
             </p>
           </div>
-          <div style="padding:.75rem;background:rgba(245,158,11,.05);border-radius:8px;border:1px solid rgba(245,158,11,.12)">
-            <strong style="font-size:.88rem;color:var(--text)">3. Thermal (Steady-State)</strong>
-            <p style="font-size:.78rem;color:var(--subtle);margin-top:.3rem;line-height:1.5">
-              Apply 40 W motor heat flux at motor flange interface.
-              Validate fin effectiveness and bearing zone temperature
-              stays below 80 &deg;C at ambient 55 &deg;C (worst case).
+          <div style="padding:.6rem;background:rgba(245,158,11,.05);border-radius:8px;border:1px solid rgba(245,158,11,.12)">
+            <strong style="font-size:.82rem;color:var(--text)">Thermal (Steady-State)</strong>
+            <p style="font-size:.72rem;color:var(--subtle);margin-top:.25rem;line-height:1.4">
+              40 W motor heat. Bearing zone &lt; 80 &deg;C at 55 &deg;C ambient.
             </p>
           </div>
-          <div style="padding:.75rem;background:rgba(245,158,11,.05);border-radius:8px;border:1px solid rgba(245,158,11,.12)">
-            <strong style="font-size:.88rem;color:var(--text)">4. Fatigue Life</strong>
-            <p style="font-size:.78rem;color:var(--subtle);margin-top:.3rem;line-height:1.5">
-              Cyclic loading: 0 &ndash; 5 kN at ~2 Hz (typical flight control cycle).
-              Target: 10&sup7; cycles without crack initiation.
-              Focus on rib-to-flange fillet radii (stress risers).
+          <div style="padding:.6rem;background:rgba(245,158,11,.05);border-radius:8px;border:1px solid rgba(245,158,11,.12)">
+            <strong style="font-size:.82rem;color:var(--text)">Fatigue Life</strong>
+            <p style="font-size:.72rem;color:var(--subtle);margin-top:.25rem;line-height:1.4">
+              0&ndash;5 kN cyclic at ~2 Hz. Target 10&#x2077; cycles. Focus on fillet radii.
             </p>
           </div>
-          <div style="padding:.75rem;background:rgba(245,158,11,.05);border-radius:8px;border:1px solid rgba(245,158,11,.12)">
-            <strong style="font-size:.88rem;color:var(--text)">5. Tolerance Stack-Up</strong>
-            <p style="font-size:.78rem;color:var(--subtle);margin-top:.3rem;line-height:1.5">
-              Verify H7/h6 bearing-to-pocket fit across &minus;55 &deg;C to +125 &deg;C
-              thermal range. CTE mismatch between 7075-T6 housing
-              and steel bearing races creates thermal preload variation.
+          <div style="padding:.6rem;background:rgba(245,158,11,.05);border-radius:8px;border:1px solid rgba(245,158,11,.12)">
+            <strong style="font-size:.82rem;color:var(--text)">Tolerance Stack-Up</strong>
+            <p style="font-size:.72rem;color:var(--subtle);margin-top:.25rem;line-height:1.4">
+              H7/h6 fit across &minus;55 to +125 &deg;C. Check CTE mismatch with steel races.
             </p>
           </div>
-          <div style="padding:.75rem;background:rgba(245,158,11,.05);border-radius:8px;border:1px solid rgba(245,158,11,.12)">
-            <strong style="font-size:.88rem;color:var(--text)">6. Assembly / Fit Check</strong>
-            <p style="font-size:.78rem;color:var(--subtle);margin-top:.3rem;line-height:1.5">
-              Import STEP into SolidWorks assembly with motor model
-              and ball-screw. Verify no interference, confirm sensor
-              line-of-sight to targets, validate cable routing clearance.
+          <div style="padding:.6rem;background:rgba(245,158,11,.05);border-radius:8px;border:1px solid rgba(245,158,11,.12)">
+            <strong style="font-size:.82rem;color:var(--text)">Assembly Fit Check</strong>
+            <p style="font-size:.72rem;color:var(--subtle);margin-top:.25rem;line-height:1.4">
+              Import motor &amp; ball-screw models. Verify interference and sensor clearance.
             </p>
           </div>
-        </div>
-      </div>
-
-      <!-- Design tradeoffs -->
-      <div class="card" style="margin-top:1.5rem">
-        <h3>Design Tradeoffs</h3>
-        <div style="margin-top:.75rem;font-size:.85rem;color:var(--subtle);line-height:1.7">
-          <table style="width:100%;font-size:.82rem;border-collapse:collapse">
-            <thead>
-              <tr style="border-bottom:2px solid var(--border)">
-                <th style="text-align:left;padding:.5rem 0;color:var(--text)">Decision</th>
-                <th style="text-align:left;padding:.5rem 0;color:var(--text)">Chosen</th>
-                <th style="text-align:left;padding:.5rem 0;color:var(--text)">Alternative</th>
-                <th style="text-align:left;padding:.5rem 0;color:var(--text)">Rationale</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr style="border-bottom:1px solid var(--border)">
-                <td style="padding:.4rem 0">Material</td>
-                <td style="padding:.4rem 0;color:var(--accent2)">7075-T6 Al</td>
-                <td style="padding:.4rem 0">Ti-6Al-4V</td>
-                <td style="padding:.4rem 0">8&times; cost reduction; adequate strength at this load level</td>
-              </tr>
-              <tr style="border-bottom:1px solid var(--border)">
-                <td style="padding:.4rem 0">Ribs vs thicker wall</td>
-                <td style="padding:.4rem 0;color:var(--accent2)">6 ribs</td>
-                <td style="padding:.4rem 0">+3 mm wall</td>
-                <td style="padding:.4rem 0">~35% lighter for equivalent bending stiffness</td>
-              </tr>
-              <tr style="border-bottom:1px solid var(--border)">
-                <td style="padding:.4rem 0">Cooling</td>
-                <td style="padding:.4rem 0;color:var(--accent2)">Integral fins</td>
-                <td style="padding:.4rem 0">Bolt-on heatsink</td>
-                <td style="padding:.4rem 0">No thermal interface resistance; fewer parts</td>
-              </tr>
-              <tr style="border-bottom:1px solid var(--border)">
-                <td style="padding:.4rem 0">Inspection access</td>
-                <td style="padding:.4rem 0;color:var(--accent2)">Removable port</td>
-                <td style="padding:.4rem 0">Full split housing</td>
-                <td style="padding:.4rem 0">Lower complexity; split housing doubles sealing risk</td>
-              </tr>
-              <tr>
-                <td style="padding:.4rem 0">Sensor mounting</td>
-                <td style="padding:.4rem 0;color:var(--accent2)">Integral bosses</td>
-                <td style="padding:.4rem 0">Adhesive pads</td>
-                <td style="padding:.4rem 0">Repeatable coupling; calibrated vibration transfer path</td>
-              </tr>
-            </tbody>
-          </table>
         </div>
       </div>
     </div>
